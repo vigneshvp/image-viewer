@@ -18,6 +18,7 @@ export default class Login extends Component {
     loginClickHandler = () => {
         this.state.username === "" ? this.setState({usernameRequired: "dispBlock"}) : this.setState({usernameRequired: "dispNone"});
         this.state.password === "" ? this.setState({passwordRequired: "dispBlock"}) : this.setState({passwordRequired: "dispNone"});
+        // If username is admin and password is admin, then it is valid
         if (this.state.username === "admin" && this.state.password === "admin") {
             this.setState({validUsernameAndPassword: "dispNone"});
             sessionStorage.setItem(
@@ -25,8 +26,11 @@ export default class Login extends Component {
                 "IGQVJVMUpqV1BlOEdwdldUMmMyTHlaVGdPR2hwZAHJ0c3pfVklZATWZAWWHlRZAlJBUDExYXZA6NGVuZAThaWGhvM3psTy1WMkhNOXFiUmVUbHdzRWhtQTBPSVlrX2lINDBtNC1LLXJjeXRCS2JZAVER3ODc5MXlVNm9PTmREaGRR"
             );
             window.location = "/home";
-        } else {
+        } else if(this.state.username != "" && this.state.password != "") {
             this.setState({validUsernameAndPassword: "dispBlock"});
+        } else {
+            // When either username or password is entered
+            this.setState({validUsernameAndPassword: "dispNone"});
         }
     }
 
