@@ -1,8 +1,8 @@
 import React, {Component} from "react";
-import './Home.css'
+import './Login.css'
 import Header from "../../common/header/Header";
 
-class Home extends Component {
+class Login extends Component {
     render() {
         return (
             <div>
@@ -12,4 +12,4 @@ class Home extends Component {
     }
 }
 
-export default Home;
+export default Login;
