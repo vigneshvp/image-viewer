@@ -18,26 +18,17 @@ export default class Login extends Component {
                 <Header/>
                 <Card className="card">
                     <h2 className="card-heading">LOGIN</h2>
-                    <FormControl fullWidth={true} margin="normal">
-                        <InputLabel htmlFor="username">Username *</InputLabel>
-                        <Input
-                            id="username"
-                        />
+                    <FormControl fullWidth={true} margin="normal" required>
+                        <InputLabel htmlFor="username">Username</InputLabel>
+                        <Input id="username" type="text"/>
                     </FormControl>
-                    <FormControl fullWidth={true} margin="normal">
-                        <InputLabel htmlFor="password">Password *</InputLabel>
-                        <Input
-                            id="password"
-                            type="password"
-                        />
+                    <br/><br/>
+                    <FormControl fullWidth={true} margin="normal" required>
+                        <InputLabel htmlFor="password">Password</InputLabel>
+                        <Input id="password" type="password"/>
                     </FormControl>
-                    <Button
-                        variant="contained"
-                        color="primary"
-                        className="button"
-                    >
-                        LOGIN
-                    </Button>
+                    <br/><br/>
+                    <Button variant="contained" color="primary">LOGIN</Button>
                 </Card>
             </div>
         );
