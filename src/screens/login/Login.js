@@ -16,8 +16,8 @@ export default class Login extends Component {
         return (
             <div>
                 <Header/>
-                <Card>
-                    <h2>LOGIN</h2>
+                <Card className="card">
+                    <h2 className="card-heading">LOGIN</h2>
                     <FormControl fullWidth={true} margin="normal">
                         <InputLabel htmlFor="username">Username *</InputLabel>
                         <Input
@@ -33,7 +33,9 @@ export default class Login extends Component {
                     </FormControl>
                     <Button
                         variant="contained"
-                        color="primary">
+                        color="primary"
+                        className="button"
+                    >
                         LOGIN
                     </Button>
                 </Card>
