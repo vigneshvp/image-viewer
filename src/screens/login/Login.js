@@ -1,7 +1,7 @@
 import React, {Component} from "react";
 import './Login.css'
 import Header from "../../common/header/Header";
-import {Button, Card, FormControl, Input, InputLabel} from "@material-ui/core";
+import {Button, Card, FormControl, Input, InputLabel,FormHelperText} from "@material-ui/core";
 
 export default class Login extends Component {
     constructor() {
@@ -9,7 +9,16 @@ export default class Login extends Component {
         this.state = {
             username: "",
             password: "",
+            usernameRequired: "dispNone"
         };
+    }
+
+    loginClickHandler = () => {
+        this.state.username === "" ? this.setState({ usernameRequired: "dispBlock" }) : this.setState({ usernameRequired: "dispNone" });
+    }
+
+    inputUsernameChangeHandler = (e) => {
+        this.setState({ username: e.target.value });
     }
 
     render() {
@@ -21,6 +30,9 @@ export default class Login extends Component {
                     <FormControl fullWidth={true} margin="normal" required>
                         <InputLabel htmlFor="username">Username</InputLabel>
                         <Input id="username" type="text"/>
+                        <FormHelperText className={this.state.usernameRequired}>
+                            <span className="red">required</span>
+                        </FormHelperText>
                     </FormControl>
                     <br/><br/>
                     <FormControl fullWidth={true} margin="normal" required>
@@ -28,7 +40,7 @@ export default class Login extends Component {
                         <Input id="password" type="password"/>
                     </FormControl>
                     <br/><br/>
-                    <Button variant="contained" color="primary">LOGIN</Button>
+                    <Button variant="contained" color="primary" onClick={this.loginClickHandler}>LOGIN</Button>
                 </Card>
             </div>
         );

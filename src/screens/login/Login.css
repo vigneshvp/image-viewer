@@ -2,8 +2,7 @@
     max-width: 400px;
     margin: 2em auto;
     padding: 2em 2em;
-    display:block;
-    align-content: center;
+    
 }
 .card-heading {
     margin: 1px 0 0;
@@ -11,9 +10,16 @@
 .button {
     margin-top: 30px;
 }
-.error {
+.red {
     margin-top: 7px;
     color: red;
+}
+.dispNone {
+    display: none;
+}
+
+.dispBlock {
+    display: block;
 }
 
 
