@@ -35,7 +35,7 @@ export default class Login extends Component {
                     <h2 className="card-heading">LOGIN</h2>
                     <FormControl fullWidth={true} margin="normal" required>
                         <InputLabel htmlFor="username">Username</InputLabel>
-                        <Input id="username" type="text"/>
+                        <Input id="username" type="text" username={this.state.username} onChange={this.inputUsernameChangeHandler} />
                         <FormHelperText className={this.state.usernameRequired}>
                             <span className="red">required</span>
                         </FormHelperText>
@@ -43,7 +43,7 @@ export default class Login extends Component {
                     <br/><br/>
                     <FormControl fullWidth={true} margin="normal" required>
                         <InputLabel htmlFor="password">Password</InputLabel>
-                        <Input id="password" type="password"/>
+                        <Input id="password" type="password" password={this.state.password} onChange={this.inputPasswordChangeHandler} />
                         <FormHelperText className={this.state.passwordRequired}>
                             <span className="red">required</span>
                         </FormHelperText>
