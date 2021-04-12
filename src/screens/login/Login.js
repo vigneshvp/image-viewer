@@ -9,16 +9,22 @@ export default class Login extends Component {
         this.state = {
             username: "",
             password: "",
-            usernameRequired: "dispNone"
+            usernameRequired: "dispNone",
+            passwordRequired: "dispNone"
         };
     }
 
     loginClickHandler = () => {
         this.state.username === "" ? this.setState({ usernameRequired: "dispBlock" }) : this.setState({ usernameRequired: "dispNone" });
+        this.state.password === "" ? this.setState({ passwordRequired: "dispBlock" }) : this.setState({ passwordRequired: "dispNone" });
     }
 
     inputUsernameChangeHandler = (e) => {
         this.setState({ username: e.target.value });
+    }
+
+    inputPasswordChangeHandler = (e) => {
+        this.setState({ password: e.target.value });
     }
 
     render() {
@@ -38,6 +44,9 @@ export default class Login extends Component {
                     <FormControl fullWidth={true} margin="normal" required>
                         <InputLabel htmlFor="password">Password</InputLabel>
                         <Input id="password" type="password"/>
+                        <FormHelperText className={this.state.passwordRequired}>
+                            <span className="red">required</span>
+                        </FormHelperText>
                     </FormControl>
                     <br/><br/>
                     <Button variant="contained" color="primary" onClick={this.loginClickHandler}>LOGIN</Button>
